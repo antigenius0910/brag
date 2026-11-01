@@ -121,12 +121,12 @@ When voice is enabled, write the narration lines into `brag-plan.md` under a
 `## Voiceover script` section, then generate the audio through Kokoro:
 
 ```bash
-npx hyperframes tts "<narration text or path to script>" \
+npx hyperframes@0.8.200 tts "<narration text or path to script>" \
   --voice af_heart \
   --output <output-dir>/composition/assets/voiceover.wav
 ```
 
-If the user wants a different Kokoro voice, run `npx hyperframes tts --list`
+If the user wants a different Kokoro voice, run `npx hyperframes@0.8.200 tts --list`
 to see the available options. By default, use the command above to generate
 narration.
 
@@ -152,7 +152,7 @@ If extraction is unavailable (no helper, or ffmpeg missing), note it in the brie
 
 ## Beat sync (when a cue source is available)
 
-Get a cue source first (see `audio.md` → "Beat and cue sources"): a bundled preset, `analyze_music_cues.py` on any track (needs Python; run via `uv`), or `npx hyperframes beats` (no Python; needs Hyperframes ≥ 0.6.99). The rich sources (preset / `analyze_music_cues.py`) give two arrays; `hyperframes beats` gives one.
+Get a cue source first (see `audio.md` → "Beat and cue sources"): a bundled preset, `analyze_music_cues.py` on any track (needs Python; run via `uv`), or `npx hyperframes@0.8.200 beats` (no Python; needs Hyperframes ≥ 0.6.99). The rich sources (preset / `analyze_music_cues.py`) give two arrays; `hyperframes beats` gives one.
 
 - **`strongCues`** — high-intensity beats (drops, swells, accents). Use for **major moments**: scene transitions, hero reveals, match payoff, logo landing. Lock 1–3 per video. With `hyperframes beats` (no `strongCues`), take the highest-`strength` beats instead.
 - **`beats`** — the full beat grid. Use to **snap small sequential events** into the music's pulse: cards arriving one by one, stats popping in, sequenced SFX hits.

@@ -268,7 +268,7 @@ This is the fallback when `hyperframes beats` (option 3) is unavailable — e.g.
 3. **Any track → `hyperframes beats` (simple, no Python; needs Hyperframes ≥ 0.6.99).** After the music is wired into the composition, run:
 
 ```bash
-npx hyperframes beats <output-dir>/composition
+npx hyperframes@0.8.200 beats <output-dir>/composition
 ```
 
 It writes a per-track beat file: a beat grid with per-beat timing and a normalized `strength` (0-1), but no separate `strongCues` array — so derive "strong" beats by taking the highest-`strength` ones. (See the current hyperframes-cli `beats` guidance for the exact output path.) `beats` was added in Hyperframes 0.6.99; on an older pinned install it won't exist — fall back to option 2 (the script), or to the `unavailable` note below.

@@ -4,23 +4,23 @@
 
 ```bash
 cd <output-dir>/composition
-npx hyperframes check   # brag's single pre-render gate — fix every error it reports
+npx hyperframes@0.8.200 check   # brag's single pre-render gate — fix every error it reports
 ```
 
 Fix all errors. `check` is brag's single pre-render gate — run it and fix everything it reports, including WCAG contrast failures (they gate as errors, not warnings). Each contrast finding carries a suggested compliant color, so apply it or adjust within the palette family and re-run `check` — most fixes need no screenshot. There is no per-element contrast escape hatch for real text; the only bypass is `check --no-contrast`, which skips the entire WCAG pass (all-or-nothing), not a way to accept one borderline element. For exact contrast thresholds, layout escape hatches, and reporting details, follow the current hyperframes-cli `check` guidance. `check`'s layout pass backstops the "keep all text readable" creative law — fix any reported overflow.
 
-Read the contrast coverage too. If the composition has visible DOM text but reports `0/0 text checks` or zero elements checked, its contrast is unverified even if `check` prints "passed". Inspect `npx hyperframes check --json` and the sampled frames to find what was skipped. If unsupported `oklch()` colors are the cause, convert the affected colors to equivalent sRGB hex or `rgb()` values, verify that the palette still matches, and rerun `check`. Continue only when the expected text is actually audited and the contrast findings are resolved; `--no-contrast` does not satisfy this gate.
+Read the contrast coverage too. If the composition has visible DOM text but reports `0/0 text checks` or zero elements checked, its contrast is unverified even if `check` prints "passed". Inspect `npx hyperframes@0.8.200 check --json` and the sampled frames to find what was skipped. If unsupported `oklch()` colors are the cause, convert the affected colors to equivalent sRGB hex or `rgb()` values, verify that the palette still matches, and rerun `check`. Continue only when the expected text is actually audited and the contrast findings are resolved; `--no-contrast` does not satisfy this gate.
 
 For a visual gut-check before rendering, optionally capture key frames:
 
 ```bash
-npx hyperframes snapshot   # PNG key frames
+npx hyperframes@0.8.200 snapshot   # PNG key frames
 ```
 
 ## Preview
 
 ```bash
-npx hyperframes preview
+npx hyperframes@0.8.200 preview
 ```
 
 Tell the user the preview is running and give them the localhost URL. Invite them to check it before rendering.
@@ -30,19 +30,19 @@ If the user approves or asks to render:
 ## Render
 
 ```bash
-npx hyperframes render --output ../brag.mp4
+npx hyperframes@0.8.200 render --output ../brag.mp4
 ```
 
 This outputs to `<output-dir>/brag.mp4` (one level up from the composition directory).
 
 For a faster iteration render:
 ```bash
-npx hyperframes render --quality draft --output ../brag.mp4
+npx hyperframes@0.8.200 render --quality draft --output ../brag.mp4
 ```
 
 For final delivery:
 ```bash
-npx hyperframes render --quality delivery --output ../brag.mp4
+npx hyperframes@0.8.200 render --quality delivery --output ../brag.mp4
 ```
 
 ## Pick the poster frame
