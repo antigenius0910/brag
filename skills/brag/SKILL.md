@@ -85,6 +85,12 @@ Generate the timestamp at the start of the run (`YYYY-MM-DD-HHmmss`) and use it 
 
 `<skill-dir>` is the directory containing this `SKILL.md`. Claude Code prints it as "Base directory for this skill" when the skill loads; for other agents it's wherever the skill was installed. Bundled assets are under `<skill-dir>/assets/` and scripts under `<skill-dir>/scripts/`. Don't guess an install path: a plugin install, a `~/.claude/skills/` copy, and this repo all put it somewhere different.
 
+## Pinned tools
+
+Run Hyperframes as `npx hyperframes@0.8.200`, exactly as the commands in this skill and its references spell it. A bare `npx hyperframes` downloads and runs whatever version npm serves that day, so one bad publish would run on the user's machine. Keep the pin even if a newer version exists or another skill shows the unpinned form. The matching companion skills come from the same release tag (`v0.8.200` of heygen-com/hyperframes); see `docs/other-agents.md` for the install command.
+
+To move to a newer Hyperframes, bump the version everywhere at once (`git grep -l 'hyperframes@0.8.200'`, plus the companion-skills tag) after checking that release.
+
 ---
 
 ## Step 1: Inspect the project
@@ -119,7 +125,7 @@ Write the composition brief and use Hyperframes to create the video implementati
 
 `/brag` owns the product angle, source material, storyboard, tone, format, audio selection, music cue guidance, and delivery expectations. Hyperframes owns the concrete composition structure, exact animation timing, animation mechanics, runtime choices, linting rules, and render workflow.
 
-**Gate:** `npx hyperframes check` passes with zero errors inside `<output-dir>/composition/` (the single browser gate before render — see hyperframes-cli for what it audits).
+**Gate:** `npx hyperframes@0.8.200 check` passes with zero errors inside `<output-dir>/composition/` (the single browser gate before render — see hyperframes-cli for what it audits).
 
 ---
 

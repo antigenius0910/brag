@@ -5,7 +5,7 @@ Used two ways: (1) a maintainer tool to precompute the bundled-track cue
 presets, and (2) an optional runtime "extended" beat-sync path for /brag on
 any track when Python + librosa are available (see references/audio.md ->
 "Beat and cue sources"). When those deps are absent, /brag falls back to
-`npx hyperframes beats`. Takes any audio file as input.
+`npx hyperframes@0.8.200 beats`. Takes any audio file as input.
 """
 
 from __future__ import annotations

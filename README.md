@@ -127,7 +127,7 @@ You get a `brag-output/` folder with the plan, a composition brief, share copy, 
 - An agent that supports Agent Skills — Claude Code, opencode, Codex CLI, or any agent with custom instructions (see "Also works with" above)
 - Node.js 22+
 - FFmpeg on `PATH`
-- Hyperframes CLI — `npx hyperframes` (check it with `npx hyperframes doctor`)
+- Hyperframes CLI — `npx hyperframes@0.8.200` (check it with `npx hyperframes@0.8.200 doctor`)
 
 ## What's in this repo
 

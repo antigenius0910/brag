@@ -198,7 +198,7 @@ Do not over-specify audio if the tone asks for restraint. For `yc-parody` or `de
 
 ## Music cue guidance
 
-Beat/cue sync is available for any track now (see `audio.md` → "Beat and cue sources"): bundled tracks have precomputed presets; custom tracks get cues at composition time via `analyze_music_cues.py` (rich, needs Python) or `npx hyperframes beats` (simple, zero-dep). When the plan chooses music, add a compact `Music cue guidance` section to `brag-plan.md`:
+Beat/cue sync is available for any track now (see `audio.md` → "Beat and cue sources"): bundled tracks have precomputed presets; custom tracks get cues at composition time via `analyze_music_cues.py` (rich, needs Python) or `npx hyperframes@0.8.200 beats` (simple, zero-dep). When the plan chooses music, add a compact `Music cue guidance` section to `brag-plan.md`:
 
 - The track and, if a preset exists, its tempo.
 - 1-3 strong-cue timestamps to target for major visual moments — from the preset if bundled, otherwise note "to be detected at composition time."
